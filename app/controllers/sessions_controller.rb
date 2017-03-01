@@ -13,6 +13,7 @@ class SessionsController < ApplicationController
   end
 
   def auth_failure
+    byebug
     redirect_to root_path
   end
 
@@ -22,5 +23,10 @@ class SessionsController < ApplicationController
       flash[:success] = 'Kick rocks!'
     end
     redirect_to root_path
+  end
+
+  protected
+  def auth_hash
+    request.env['omniauth.auth']
   end
 end

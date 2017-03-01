@@ -10,24 +10,24 @@ class User < ApplicationRecord
       user
     end
 
-    private
-
-    def get_social_location_for(provider, location_hash)
-      case provider
-        when 'linkedin'
-          location_hash['name']
-        else
-          location_hash
-      end
-    end
-
-    def get_social_url_for(provider, urls_hash)
-      case provider
-        when 'linkedin'
-          urls_hash['public_profile']
-        else
-          urls_hash[provider.capitalize]
-      end
-    end
+    # private
+    #
+    # def get_social_location_for(provider, location_hash)
+    #   case provider
+    #     when 'linkedin'
+    #       location_hash['name']
+    #     else
+    #       location_hash
+    #   end
+    # end
+    #
+    # def get_social_url_for(provider, urls_hash)
+    #   case provider
+    #     when 'linkedin'
+    #       urls_hash['public_profile']
+    #     else
+    #       urls_hash[provider.capitalize]
+    #   end
+    # end
   end
 end
